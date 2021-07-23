@@ -22,6 +22,7 @@ namespace ImprovedBroadCast
 
         public override void OnEnabled()
         {
+            if(!Config.IsEnabled) return;
             EventHandler = new EventHandlers(this);
             Player.Escaping += EventHandler.OnEscape;
             Player.ChangingRole += EventHandler.OnChanging;
